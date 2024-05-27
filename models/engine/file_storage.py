@@ -68,6 +68,7 @@ class FileStorage:
     def close(self):
         """call reload() method for deserializing the JSON file to objects"""
         self.reload()
+
     def get(self, cls, id):
         """
         Retrieves object of a class or all objects of that class
@@ -92,4 +93,4 @@ class FileStorage:
                 return occurrence
         if not cls:
             occurrence = len(self.all())
-        return occurrence
+            return occurrence
