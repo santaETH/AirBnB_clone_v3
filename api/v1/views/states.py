@@ -9,7 +9,7 @@ from models.state import State
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
 def get_states():
     """GET /states - Returns all states"""
-    states = storage.all(State).values()
+    states = storage.all("State").values()
     if not states:
         abort(404)
     return jsonify([state.to_dict() for state in states])
