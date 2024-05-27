@@ -5,6 +5,7 @@ from api.v1.views import app_views
 from flask import jsonify, abort, request
 from models import storage
 from models.place import Place
+from models.city import City
 
 
 @app_views.route('/cities/<city_id>/places', methods=['GET'],
@@ -37,6 +38,7 @@ def delete_place(place_id):
     place.delete()
     storage.save()
     return jsonify({}), 200
+
 
 @app_views.route('/cities/<city_id>/places', methods=['POST'],
                  strict_slashes=False)
