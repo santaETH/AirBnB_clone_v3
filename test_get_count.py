@@ -4,9 +4,12 @@
 from models import storage
 from models.state import State
 
+<<<<<<< HEAD
 new_state = State(name='Ethiopia')
 new_state.save()
 
+=======
+>>>>>>> b8964431ce510f7714a5a2e63583f0a61428498c
 print("All objects: {}".format(storage.count()))
 print("State objects: {}".format(storage.count(State)))
 
