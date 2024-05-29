@@ -60,8 +60,8 @@ class FileStorage:
         except Exception:
             pass
 
-        def delete(self, obj=None):
-            """delete obj from __objects if it’s inside"""
+    def delete(self, obj=None):
+        """delete obj from __objects if it’s inside"""
         if obj is not None:
             key = obj.__class__.__name__ + '.' + obj.id
             if key in self.__objects:
