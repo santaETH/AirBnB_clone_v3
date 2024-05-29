@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ A rest api for cities objects """
-from flask import Flask, abort, request, Blueprint, jsonify
+from flask import Flask, abort, request, Blueprint, jsonify, make_response
 from api.v1.views import app_views
 from models import storage
 from models.city import City
@@ -75,4 +75,4 @@ def update_city(city_id):
         if k not in ['id', 'created_at', 'updated_at']:
             setattr(city, k, v)
     storage.save()
-    return jsonify(city.to_dict()), 200
+    return make_response(jsonify(city.to_dict()), 200)
